@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="js/main.js" defer></script>
+    </head>
+    <body>
+        <section id="filters" class="container mx-auto mt-20">
+            <div class="flex flex-col lg:flex-row justify-between">
+                <div class="flex flex-row items-center space-x-3 flex-wrap lg:mx-0 mx-10">
+                    <h3 class="mb-4 lg:mb-0">Filter by Category:</h3>
+                </div>
+
+                <div class="flex flex-row space-x-5 justify-center lg:mx-0 mx-10 lg:mt-0 mt-5 lg:justify-center items-center">
+                    <h4>Search</h4>
+                    <input type="search" name="search" id="search" placeholder="search..." class="border border-black px-4 py-2 focus:outline-2 focus:outline-black">
+                </div>
+            </div>
+        </section>
+        <section id="cards" class="container mx-auto my-10">
+            <div
+                id="cards-container"
+                class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-5 lg:mx-0 mx-10"
+            >
+                <!-- <div
+                    class="rounded-3xl border-2 shadow-xl border-gray-300 bg-white px-4 flex flex-col justify-end hover:transition hover:scale-105 hover:shadow-2xl"
+                >
+                    <div class="lg:h-1/2 w-full h-1/2 object-contain text-center">
+                        <img
+                            class="w-full h-full rounded-2xl"
+                            src="https://i.pravatar.cc/150"
+                            alt=""
+                        />
+                    </div>
+                    <h2 class="my-6 text-2xl font-extrabold">Title</h2>
+                    <div class="flex justify-between">
+                        <h3 class="font-semibold text-3xl text-green-500 ">$15</h3>
+                        <p class="rounded-lg border text-center border-blue-50 py-2 px-3 text-sm text-blue-400 bg-blue-100">Category</p>
+                    </div>
+                    <button class="text-center block py-4 my-6 rounded-lg w-full border transition bg-blue-400 text-white text-xl hover:bg-blue-600">Buy</button>
+                </div> -->
+            </div>
+        </section>
+    </body>
+</html>
