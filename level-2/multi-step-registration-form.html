@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Registration Form</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="js/registration-form.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <section
+                id="wrapper"
+                class="max-w-4xl mx-auto h-screen flex justify-center"
+            >
+                <div class="flex flex-col items-center mt-20">
+                    <h1 id="registration-title" class="text-2xl font-bold text-blue-700 my-10">
+                        Registration Form
+                    </h1>
+                    <div
+                        id="card"
+                        class="border border-t-0 w-[900px] shadow-xl rounded-lg p-10"
+                    >
+                        <div id="header" class="my-5">
+                            <ul
+                                class="flex flex-row justify-evenly w-full space-x-60"
+                            >
+                                <li
+                                    id="step-1"
+                                    class="text-start text-lg text-blue-700 font-semibold"
+                                >
+                                    1. Personal
+                                </li>
+                                <li
+                                    id="step-2"
+                                    class="text-center text-lg text-gray-400 font-semibold"
+                                >
+                                    2. Account
+                                </li>
+                                <li
+                                    id="step-3"
+                                    class="text-end text-lg text-gray-400 font-semibold"
+                                >
+                                    3. Preferences
+                                </li>
+                            </ul>
+                            <div
+                                id="progress-bar"
+                                class="border h-3 bg-gray-50 rounded-lg mt-3"
+                            >
+                                <div
+                                    id="progress-fill"
+                                    class="h-full bg-blue-700 rounded-lg transition-all duration-300 w-1/3"
+                                ></div>
+                            </div>
+                        </div>
+                        <form>
+                            <div id="personal">
+                                <ul
+                                    class="flex flex-row justify-between w-full space-x-4"
+                                >
+                                    <li
+                                        class="flex flex-col flex-1 mb-5 space-y-3"
+                                    >
+                                        <label
+                                            class="text-md font-medium"
+                                            for="full-name"
+                                            >Full Name</label
+                                        >
+                                        <input
+                                            class="border border-gray-200 bg-gray-50 rounded-md px-3 py-1 placeholder:text-sm"
+                                            placeholder="John Doe"
+                                            type="text"
+                                            name="full-name"
+                                            id="full-name"
+                                        />
+                                    </li>
+                                    <li
+                                        class="flex flex-col flex-1 mb-5 space-y-3"
+                                    >
+                                        <label
+                                            class="text-md font-medium"
+                                            for="email"
+                                            >Email</label
+                                        >
+                                        <input
+                                            class="border border-gray-200 bg-gray-50 rounded-md px-3 py-1 placeholder:text-sm"
+                                            placeholder="johndoe@example.com"
+                                            class="border"
+                                            name="email"
+                                            id="email"
+                                        />
+                                    </li>
+                                    <li
+                                        class="flex flex-col flex-1 mb-5 space-y-3"
+                                    >
+                                        <label
+                                            class="text-md font-medium"
+                                            for="phone"
+                                            >Phone</label
+                                        >
+                                        <input
+                                            class="border border-gray-200 bg-gray-50 rounded-md px-3 py-1 placeholder:text-sm"
+                                            placeholder="555-555-555"
+                                            class="border"
+                                            type="tel"
+                                            name="phone"
+                                            id="phone"
+                                        />
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="account" class="hidden">
+                                <ul
+                                    class="flex flex-row justify-between w-full space-x-4"
+                                >
+                                    <li
+                                        class="flex flex-col flex-1 mb-5 space-y-3"
+                                    >
+                                        <label
+                                            class="text-md font-medium"
+                                            for="username"
+                                            >Username</label
+                                        >
+                                        <input
+                                            class="border border-gray-200 bg-gray-50 rounded-md px-3 py-1 placeholder:text-sm"
+                                            placeholder="johndoe"
+                                            type="text"
+                                            name="usernname"
+                                            id="username"
+                                        />
+                                    </li>
+                                    <li
+                                        class="flex flex-col flex-1 mb-5 space-y-3"
+                                    >
+                                        <label
+                                            class="text-md font-medium"
+                                            for="password"
+                                            >Password</label
+                                        >
+                                        <input
+                                            class="border border-gray-200 bg-gray-50 rounded-md px-3 py-1 placeholder:text-sm"
+                                            placeholder="******"
+                                            class="border"
+                                            type="password"
+                                            name="password"
+                                            id="password"
+                                        />
+                                    </li>
+                                    <li
+                                        class="flex flex-col flex-1 mb-5 space-y-3"
+                                    >
+                                        <label
+                                            class="text-md font-medium"
+                                            for="confirm-password"
+                                            >Confirm Password</label
+                                        >
+                                        <input
+                                            class="border border-gray-200 bg-gray-50 rounded-md px-3 py-1 placeholder:text-sm"
+                                            placeholder="******"
+                                            class="border"
+                                            type="password"
+                                            name="confirm-password"
+                                            id="confirm-password"
+                                        />
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="preferences" class="hidden">
+                                <ul
+                                    class="flex flex-row justify-between w-full space-x-4"
+                                >
+                                    <li
+                                        class="flex flex-col flex-1 mb-5 space-y-5 items-center"
+                                    >
+                                        <label
+                                            class="text-md font-medium"
+                                            for="newsletter"
+                                            >Newsletter</label
+                                        >
+                                        <input
+                                            class="borderborder-gray-200  bg-gray-50 rounded-md px-3 py-1 placeholder:text-sm"
+                                            type="checkbox"
+                                            name="mewsletter"
+                                            id="newsletter"
+                                        />
+                                    </li>
+                                    <li
+                                        class="flex flex-col flex-1 mb-5 space-y-2"
+                                    >
+                                        <label
+                                            class="text-md font-medium"
+                                            for="role"
+                                            >Role</label
+                                        >
+                                        <select
+                                            class="border border-gray-200 bg-gray-50 rounded-md px-3 py-1 placeholder:text-sm"
+                                            name="role"
+                                            id="role"
+                                        >
+                                            <option value="">Select</option>
+                                            <option value="role-1">
+                                                Role 1
+                                            </option>
+                                            <option value="role-2">
+                                                Role 2
+                                            </option>
+                                            <option value="role-3">
+                                                Role 3
+                                            </option>
+                                        </select>
+                                    </li>
+                                    <li
+                                        class="flex flex-col flex-1 mb-5 space-y-2"
+                                    >
+                                        <label
+                                            class="text-md font-medium"
+                                            for="Bio"
+                                            >Bio</label
+                                        >
+                                        <textarea
+                                            class="border w-full p-1"
+                                            name="bio"
+                                            id="bio"
+                                        ></textarea>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="summary" class="hidden">
+                                <div
+                                    class="flex flex-col space-y-4 w-full justify-center items-center"
+                                >
+                                    <h1 class="text-3xl my-4">Summary</h1>
+                                    <div
+                                        class="grid grid-cols-3 border w-full rounded-lg overflow-hidden"
+                                    >
+                                        <div class="border-r border-b p-4">
+                                            <p class="text-xs text-gray-400">
+                                                Full Name
+                                            </p>
+                                            <p
+                                                id="summary-fullname"
+                                                class="font-medium mt-1"
+                                            ></p>
+                                        </div>
+                                        <div
+                                            class="border-r col-span-2 border-b p-4"
+                                        >
+                                            <p class="text-xs text-gray-400">
+                                                Email
+                                            </p>
+                                            <p
+                                                id="summary-email"
+                                                class="font-medium mt-1"
+                                            ></p>
+                                        </div>
+                                        <div class="border-b border-r p-4">
+                                            <p class="text-xs text-gray-400">
+                                                Phone
+                                            </p>
+                                            <p
+                                                id="summary-phone"
+                                                class="font-medium mt-1"
+                                            ></p>
+                                        </div>
+                                        <div class="border-r border-b p-4">
+                                            <p class="text-xs text-gray-400">
+                                                Username
+                                            </p>
+                                            <p
+                                                id="summary-username"
+                                                class="font-medium mt-1"
+                                            ></p>
+                                        </div>
+                                        <div class="border-b p-4">
+                                            <p class="text-xs text-gray-400">
+                                                Role
+                                            </p>
+                                            <p
+                                                id="summary-role"
+                                                class="font-medium mt-1"
+                                            ></p>
+                                        </div>
+                                        <div class="col-span-2 border-r p-4">
+                                            <p class="text-xs text-gray-400">
+                                                Bio
+                                            </p>
+                                            <p
+                                                id="summary-bio"
+                                                class="font-medium mt-1"
+                                            ></p>
+                                        </div>
+                                        <div class="p-4">
+                                            <p class="text-xs text-gray-400">
+                                                Newsletter
+                                            </p>
+                                            <p
+                                                id="summary-newsletter"
+                                                class="font-medium mt-1"
+                                            ></p>
+                                        </div>
+                                    </div>
+                                    <button
+                                        id="submit-btn"
+                                        class="mt-5 w-full bg-blue-700 text-white py-2 rounded-md hover:bg-white hover:text-blue-700 border border-blue-700"
+                                    >
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                            <div
+                                id="success"
+                                class="hidden flex flex-col items-center justify-center space-y-4 py-10"
+                            >
+                                <div
+                                    class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center"
+                                >
+                                    <svg
+                                        class="w-8 h-8 text-green-600"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 13l4 4L19 7"
+                                        />
+                                    </svg>
+                                </div>
+                                <h1 class="text-2xl font-bold text-green-600">
+                                    Registration Successful!
+                                </h1>
+                                <p class="text-gray-500 text-center">
+                                    Thank you for registering. Your account has
+                                    been created successfully.
+                                </p>
+                            </div>
+                            <div
+                                id="action-buttons"
+                                class="flex flex-row justify-between mt-5"
+                            >
+                                <button
+                                    id="previous-btn"
+                                    class="border invisible border-blue-900 bg-white text-blue-700 rounded-md px-8 py-2 text-sm hover:bg-blue-700 hover:text-white"
+                                >
+                                    Previous
+                                </button>
+
+                                <button
+                                    id="next-btn"
+                                    disabled
+                                    class="border disabled:bg-gray-200 disabled:cursor-not-allowed disabled:text-gray-400 disabled:border-0 border-blue-900 bg-blue-700 text-white rounded-md px-8 py-2 text-sm hover:bg-white hover:text-blue-700"
+                                >
+                                    Next
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
