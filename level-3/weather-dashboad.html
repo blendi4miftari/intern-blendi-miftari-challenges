@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/weather.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <div id="wrapper" class="container max-w-4xl mx-auto my-10">
+            <div class="flex flex-col bg-blue-400 p-8 justify-center items-center rounded-xl">
+                <div id="search" class="flex flex-row w-full space-x-3">
+                    <input id="searchInput" placeholder="Search"
+                        class="border border-gray-500 bg-gray-600 w-full rounded-md px-3 py-2 text-white" type="text" />
+                    <button id="searchBtn"
+                        class="h-10 hover:bg-blue-300 w-14 border rounded flex items-center justify-center text-white">
+                        <svg class="text-white" width="15px" height="15px" viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <title>ionicons-v5-f</title>
+                                <path d="M221.09,64A157.09,157.09,0,1,0,378.18,221.09,157.1,157.1,0,0,0,221.09,64Z"
+                                    style="
+                                            fill: none;
+                                            stroke: #ffffff;
+                                            stroke-miterlimit: 10;
+                                            stroke-width: 32px;
+                                        "></path>
+                                <line x1="338.29" y1="338.29" x2="448" y2="448" style="
+                                            fill: none;
+                                            stroke: #ffffff;
+                                            stroke-linecap: round;
+                                            stroke-miterlimit: 10;
+                                            stroke-width: 32px;
+                                        "></line>
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+                <div id="error" class="hidden w-full mt-4 bg-red-400/30 rounded-xl p-4">
+                    <p id="error-msg" class="text-white text-sm"></p>
+                </div>
+                <div id="recent" class="flex flex-row justify-start items-center space-x-3 w-full mt-10 flex-wrap">
+                </div>
+                <div id="content" class="w-full hidden">
+                    <div id="metrics" class="flex flex-row justify-start items-center space-x-3 w-full mt-6 mb-4">
+                        <button id="celsius"
+                            class="h-12  hover:bg-blue-300 w-16 border rounded-lg font-bold text-2xl flex items-center justify-center text-white">
+                            °C
+                        </button>
+                        <button id="farenheit"
+                            class="h-12  hover:bg-blue-300 w-16 border rounded-lg font-bold text-2xl flex items-center justify-center text-white">
+                            °F
+                        </button>
+                    </div>
+                    <div id="currentWeatherWrapper" class="flex flex-row w-full justify-between my-6">
+                        <div id="currentWeather" class="flex flex-col items-start">
+                            <h1 id="currentWeatherTitle" class="text-white text-4xl font-bold">
+                                London, GB
+                            </h1>
+                            <h3 id="currentWeatherDescription" class="my-2 text-gray-300 font-medium">
+                                Partly Cloudy
+                            </h3>
+                            <h1 id="currentWeatherDegree" class="text-7xl text-white my-3 font-extrabold">
+                                14°
+                            </h1>
+                        </div>
+                        <div class="text-9xl flex items-center">
+                            <img id="currentWeatherIcon" src="https://openweathermap.org/img/wn/04n.png"
+                                class="w-24 h-24">
+                        </div>
+                    </div>
+                    <div id="currentWeatherSpecifics" class="w-full flex flex-row space-x-3 justify-between">
+                        <div id="humidity" class="rounded-xl flex-1 p-5 flex flex-col bg-blue-200/30 space-y-2">
+                            <div class="flex flex-row items-center space-x-1 text-gray-300 font-medium">
+                                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+                                    </svg></span>
+                                <p>Humidity</p>
+                            </div>
+                            <h3 id="humidityPercent" class="text-2xl text-white font-semibold">
+                                72%
+                            </h3>
+                        </div>
+                        <div id="windSpeed" class="rounded-xl flex-1 p-5 flex flex-col bg-blue-200/30 space-y-2">
+                            <div class="flex flex-row items-center space-x-1 text-gray-300 font-medium">
+                                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2" />
+                                    </svg></span>
+                                <p>Wind Speed</p>
+                            </div>
+                            <h3 id="wind" class="text-2xl text-white font-semibold">
+                                18 km/h
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div id="forecastWeather" class="w-full mt-6 grid grid-cols-5 gap-3"></div>
+                <div id="loading" class="hidden w-full mt-4 text-center text-white">
+                    <p>Loading...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
